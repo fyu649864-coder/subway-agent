@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>地铁陪伴 · 情绪聊天小助手</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <div class="brand">
+        <span class="logo" aria-hidden="true">🌿</span>
+        <div class="brand-text">
+          <h1>地铁陪伴</h1>
+          <p class="subtitle">等车的时候，陪你说说话、玩玩小游戏</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <span class="status" id="api-status">连接中…</span>
+        <button id="clear" class="btn-ghost" title="清空当前对话记录，开始新的聊天">新对话</button>
+      </div>
+    </header>
+
+    <main class="chat-container">
+      <div class="messages" id="messages"></div>
+
+      <!-- 欢迎区：仅在无历史消息时展示 -->
+      <div class="welcome" id="welcome">
+        <div class="welcome-card">
+          <div class="welcome-emoji" aria-hidden="true">☕</div>
+          <h2>你好呀，我在这里陪你</h2>
+          <p class="welcome-intro">
+            地铁延误、车厢拥挤、赶时间着急……都可以跟我说说。<br />
+            我会认真听，也可以陪你玩点轻松的小游戏打发等待的时间。
+          </p>
+          <div class="quick-entries" id="quick-entries">
+            <button class="chip" data-text="陪我玩猜谜语，你先出题，暂时不要告诉我答案。">
+              <span class="chip-ico" aria-hidden="true">🧩</span>猜谜语
+            </button>
+            <button class="chip" data-text="我们来玩成语接龙，你先说一个成语。">
+              <span class="chip-ico" aria-hidden="true">🔗</span>成语接龙
+            </button>
+            <button class="chip" data-text="给我讲一个轻松有趣的笑话。">
+              <span class="chip-ico" aria-hidden="true">😄</span>讲个笑话
+            </button>
+            <button class="chip" data-text="我想找个人聊聊。">
+              <span class="chip-ico" aria-hidden="true">💬</span>陪我聊聊
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="error-banner" id="error-banner" role="alert"></div>
+
+      <div class="composer">
+        <textarea
+          id="input"
+          rows="1"
+          placeholder="说点什么吧，回车发送，Shift+回车换行…"
+          aria-label="聊天输入框"
+        ></textarea>
+        <button id="send" disabled aria-label="发送">
+          <span class="send-label">发送</span>
+        </button>
+      </div>
+      <p class="hint">回复由本地模型生成，实时线路与到站信息请以车站广播和官方 APP 为准。</p>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

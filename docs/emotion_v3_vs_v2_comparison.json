@@ -1,0 +1,23 @@
+{
+  "test_set": "metro_emotion_dataset_v3 (split=test)",
+  "test_size": 1057,
+  "v3": {
+    "accuracy": 0.6234626300851467,
+    "precision_macro": 0.45901788689194944,
+    "recall_macro": 0.6089077145048101,
+    "f1_macro": 0.4812707171261713,
+    "precision_weighted": 0.612105600218837,
+    "recall_weighted": 0.6234626300851467,
+    "f1_weighted": 0.5787794752211751
+  },
+  "v2_on_same_test": {
+    "loss": 1.0529270295296904,
+    "accuracy": 0.7105014191106906,
+    "precision_macro": 0.6462760794155801,
+    "recall_macro": 0.756944456126087,
+    "f1_macro": 0.6662611470859684,
+    "precision_weighted": 0.6978001754788309,
+    "recall_weighted": 0.7105014191106906,
+    "f1_weighted": 0.6799499444832512
+  }
+}

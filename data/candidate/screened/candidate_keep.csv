@@ -1,0 +1,6 @@
+﻿source,raw_id,text,original_label,mapped_label,status,reason,model_aux_label,model_aux_score
+synthetic_demo,synthetic_demo#0,车厢里突然冒烟了，我好害怕啊,fear,恐惧,保留,通过筛选,,
+synthetic_demo,synthetic_demo#1,地铁又延误了，我上班要迟到了真的急,anxiety,焦虑,保留,通过筛选,,
+synthetic_demo,synthetic_demo#2,这服务态度太差了我要投诉，气死我了,anger,愤怒,保留,通过筛选,,
+synthetic_demo,synthetic_demo#3,末班车走了我回不去了好无助,helpless,无助,保留,通过筛选,,
+synthetic_demo,synthetic_demo#4,今天地铁人还行，一切正常,neutral,平静,保留,通过筛选,,

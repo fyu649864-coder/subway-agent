@@ -1,0 +1,80 @@
+{
+  "_comment": "候选公开数据源登记表。仅登记来源与许可信息，实际文件需由人工确认许可后放入 data/candidate/raw/。条目 license=verified 表示已确认可合法使用。",
+  "datasets": [
+    {
+      "id": "synthetic_demo",
+      "name": "合成演示样本（管线验证用，非真实公开数据）",
+      "file": "synthetic_demo.csv",
+      "source_url": "本地生成",
+      "license": "内部合成，仅用于验证筛选管线，不得用于训练",
+      "license_verified": true,
+      "labels": ["fear", "anxiety", "anger", "helpless", "neutral", "positive", "happy"],
+      "text_col": "text",
+      "label_col": "label",
+      "size": 12,
+      "allowed_to_screen": true,
+      "allowed_to_merge": false
+    },
+    {
+      "id": "nlpcc2017_emotion",
+      "name": "NLPCC 2017 Shared Task: Emotion Analysis in Chinese Weibo Texts",
+      "file": null,
+      "source_url": "http://tcci.ccf.org.cn/conference/2017/dldoc.php",
+      "license": "评测共享数据，通常仅限研究用途；需以官方发布页许可为准",
+      "license_verified": false,
+      "labels": ["anger", "disgust", "fear", "happiness", "like", "sadness", "surprise"],
+      "text_col": "text",
+      "label_col": "label",
+      "size": "约 5k 训练 + 3k 测试（微博文本，多标签）",
+      "allowed_to_screen": false,
+      "allowed_to_merge": false,
+      "mapping_notes": "happiness/like -> 平静；anger -> 愤怒；sadness -> 悲伤；fear -> 恐惧；disgust 需人工判定（烦躁/愤怒），surprise -> 平静。多标签样本需人工选主标签。"
+    },
+    {
+      "id": "cec_chinese_emotion_corpus",
+      "name": "Chinese Emotion Corpus (CEC, 微博新闻评论)",
+      "file": null,
+      "source_url": "https://github.com/Embedding/Chinese-Word-Vectors 等学术仓库中常见引用，原始发布需查作者主页",
+      "license": "学术研究共享，无明确商用许可；使用前需联系原作者确认",
+      "license_verified": false,
+      "labels": ["happy", "like", "anger", "sadness", "fear", "surprise", "disgust", "none"],
+      "size": "约 2,000 条",
+      "allowed_to_screen": false,
+      "allowed_to_merge": false
+    },
+    {
+      "id": "smp2020_ewect",
+      "name": "SMP2020-EWECT 中文微博情绪分类评测数据",
+      "file": null,
+      "source_url": "http://39.106.40.198/ (SMP 官方)",
+      "license": "评测数据，研究用途；需官方确认",
+      "license_verified": false,
+      "size": "万级",
+      "allowed_to_screen": false,
+      "allowed_to_merge": false
+    },
+    {
+      "id": "simplifyweibo_4_moods_attempt_20261010",
+      "name": "simplifyweibo_4_moods（4 类情绪：开心/生气/悲伤/厌恶）",
+      "file": null,
+      "source_url": "https://github.com/SophonPlus/ChineseNlpCorpus",
+      "license": "仓库数据，需以仓库许可为准；标签可映射到项目 7 类",
+      "license_verified": false,
+      "size": "约 200 万条（采样可用）",
+      "allowed_to_screen": false,
+      "allowed_to_merge": false,
+      "download_attempt": "2026-10-10 尝试 GitHub raw 与 jsdelivr CDN 均失败（连接被重置/SSL 握手超时/404），网络受限未获取，未反复重试",
+      "mapping_notes": "开心->平静；生气->愤怒；悲伤->悲伤；厌恶->烦躁（待复核）"
+    }
+  ],
+  "download_log_20261010": [
+    {"target": "simplifyweibo_4_moods (SophonPlus/ChineseNlpCorpus)", "result": "failed", "reason": "raw.githubusercontent.com 连接被重置(10054)；cdn.jsdelivr.net SSL 握手超时；fastly.jsdelivr.net 404"},
+    {"policy": "网络受限时不反复重试、不使用来源不明数据；本轮训练仅使用本地已确权的域内真实数据 augmented_metro.xlsx"}
+  ],
+  "usage_policy": [
+    "仅当 license_verified=true 且 allowed_to_screen=true 时，文件才会被筛选管线读取。",
+    "筛选结果仅写入 data/candidate/screened/，绝不修改 data/processed/ 下的正式训练/验证/测试集。",
+    "疑似错标、无法映射标签一律标记为待复核，由人工确认。",
+    "与现有测试集精确或近似重复的候选样本一律剔除，不得进入训练。"
+  ]
+}

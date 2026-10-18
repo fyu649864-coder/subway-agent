@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# 虚拟环境
+.venv/
+venv/
+env/
+
+# 环境变量（含可能的敏感配置）
+.env
+.env.local
+
+# 日志
+logs/
+*.log
+
+# 模型与数据产物（保留目录占位，忽略大文件）
+models/*.bin
+models/*.safetensors
+models/*.pt
+models/*.pth
+**/*.bin
+**/*.safetensors
+**/*.pt
+**/*.pth
+**/*.ckpt
+**/*.onnx
+**/*.gguf
+**/*pytorch_model*
+**/*model-*-of-*
+
+# BERT / Qwen 等本地模型权重目录（保留配置、词表等小文件）
+**/bert*/**/*.bin
+**/bert*/**/*.safetensors
+**/qwen*/**/*.bin
+**/qwen*/**/*.safetensors
+
+# 本地缓存与下载缓存
+.cache/
+**/.cache/
+huggingface/
+**/huggingface/
+transformers_cache/
+**/transformers_cache/
+data/raw/*
+data/processed/*
+data/dataset/*
+!**/.gitkeep
+
+# 训练输出
+training/outputs/*
+!training/outputs/.gitkeep
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# 测试 / 覆盖率
+.pytest_cache/
+.coverage
+htmlcov/

@@ -1,0 +1,166 @@
+{
+  "pretrained": "C:\\Users\\64513\\Desktop\\地铁大创\\models\\pretrained\\models\\iic--nlp_bert_backbone_base_std\\snapshots\\master",
+  "data": "C:\\Users\\64513\\Desktop\\地铁大创\\data\\processed\\metro_emotion_dataset_3000.xlsx",
+  "max_len": 64,
+  "batch_size": 32,
+  "epochs_run": 5,
+  "lr": 2e-05,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.1,
+  "seed": 42,
+  "device": "cpu",
+  "labels": [
+    "平静",
+    "焦虑",
+    "愤怒",
+    "悲伤",
+    "恐惧",
+    "烦躁",
+    "无助"
+  ],
+  "split": {
+    "train": 2817,
+    "validation": 21,
+    "test": 21
+  },
+  "groups_cross_split": 0,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.4726636997025022,
+      "loss": 1.3153375387191772,
+      "accuracy": 0.5238095238095238,
+      "precision_macro": 0.19166666666666665,
+      "recall_macro": 0.2474747474747475,
+      "f1_macro": 0.20346320346320346,
+      "precision_weighted": 0.5071428571428571,
+      "recall_weighted": 0.5238095238095238,
+      "f1_weighted": 0.5009276437847867
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.2860154231516317,
+      "loss": 1.4628273248672485,
+      "accuracy": 0.5714285714285714,
+      "precision_macro": 0.2611111111111111,
+      "recall_macro": 0.41414141414141414,
+      "f1_macro": 0.30026455026455023,
+      "precision_weighted": 0.534920634920635,
+      "recall_weighted": 0.5714285714285714,
+      "f1_weighted": 0.5362811791383221
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.26602185350129653,
+      "loss": 1.5307401418685913,
+      "accuracy": 0.6190476190476191,
+      "precision_macro": 0.3055555555555555,
+      "recall_macro": 0.35858585858585856,
+      "f1_macro": 0.3193121693121693,
+      "precision_weighted": 0.6428571428571429,
+      "recall_weighted": 0.6190476190476191,
+      "f1_weighted": 0.6165532879818594
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.265261575003063,
+      "loss": 1.46649169921875,
+      "accuracy": 0.5714285714285714,
+      "precision_macro": 0.2638888888888889,
+      "recall_macro": 0.30303030303030304,
+      "f1_macro": 0.2716931216931217,
+      "precision_weighted": 0.6071428571428571,
+      "recall_weighted": 0.5714285714285714,
+      "f1_weighted": 0.5757369614512472
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.26513738713875534,
+      "loss": 1.5383177995681763,
+      "accuracy": 0.5714285714285714,
+      "precision_macro": 0.2638888888888889,
+      "recall_macro": 0.30303030303030304,
+      "f1_macro": 0.2716931216931217,
+      "precision_weighted": 0.6071428571428571,
+      "recall_weighted": 0.5714285714285714,
+      "f1_weighted": 0.5757369614512472
+    }
+  ],
+  "best_val_f1_macro": 0.3193121693121693,
+  "test_metrics": {
+    "loss": 1.3898916244506836,
+    "accuracy": 0.6666666666666666,
+    "precision_macro": 0.39285714285714285,
+    "recall_macro": 0.4857142857142857,
+    "f1_macro": 0.42445399212316504,
+    "precision_weighted": 0.6547619047619048,
+    "recall_weighted": 0.6666666666666666,
+    "f1_weighted": 0.6529418785057882
+  },
+  "test_classification_report": "              precision    recall  f1-score   support\n\n          平静     1.0000    0.9000    0.9474        10\n          焦虑     0.2500    0.3333    0.2857         3\n          愤怒     0.5000    0.6667    0.5714         3\n          悲伤     0.5000    1.0000    0.6667         1\n          恐惧     0.0000    0.0000    0.0000         1\n          烦躁     0.5000    0.5000    0.5000         2\n          无助     0.0000    0.0000    0.0000         1\n\n    accuracy                         0.6667        21\n   macro avg     0.3929    0.4857    0.4245        21\nweighted avg     0.6548    0.6667    0.6529        21\n",
+  "test_confusion_matrix": [
+    [
+      9,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      2,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0
+    ]
+  ]
+}
